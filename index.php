@@ -5,10 +5,18 @@ $titulo = "Notebook VAIO FE16";
 $resumo = "Notebook VAIO FE16 AMD® Ryzen 7-5825U Linux 8GB RAM 512GB SSD 16' IPS WUXGA Antirreflexo - Cinza Grafite";
 $valor = 3399.98;
 $quantidade = 5;
+$i = 1;
 ?>
 <!doctype html>
 <html lang="pt-BR">
-
+  <main class="container"> 
+ <p class="card-text"><?php echo $resumo;  ?> </p>
+<p class="text-denger">valor:<b>R$ <php?
+echo $valor; ?></b></p>
+<p class="text-primary">estoque: <?php
+echo $quantidade; ?></p>
+<a href="#" class ="btn btn-primary">ver 
+produto</a>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -133,7 +141,10 @@ $quantidade = 5;
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <main class ="container">
+</div>
     <div class="row">
+      <?php while($i<=10) { ?> 
       <div class="col mt-2">
         <div class="card" style="width: 18rem;">
           <img src="<?php echo $imagem; ?>" class="card-img-top" alt="...">
@@ -144,6 +155,7 @@ $quantidade = 5;
           </div>
         </div>
       </div>
+      <?php $i++; }//$i=$i+1 ?>
     </div>
   </main>
 
