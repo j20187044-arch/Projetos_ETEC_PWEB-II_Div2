@@ -1,4 +1,9 @@
- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<?php
+require'./controle/conexao.php';
+$pdo = conexao::conectar();
+$pdo->setatribute(PDO::ATTR_ERROMODE,PDO::ERROMODE_EXCEPTION);
+?>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">LogoDaLojinha</a>
         <button
