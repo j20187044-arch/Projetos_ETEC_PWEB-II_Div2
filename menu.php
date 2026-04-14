@@ -1,7 +1,10 @@
 <?php
 require'./controle/conexao.php';
 $pdo = conexao::conectar();
-$pdo->setatribute(PDO::ATTR_ERROMODE,PDO::ERROMODE_EXCEPTION);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "select * from categorias;";
+$prp = $pdo->prepare($sql);
+$prp->execute();
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -26,17 +29,21 @@ $pdo->setatribute(PDO::ATTR_ERROMODE,PDO::ERROMODE_EXCEPTION);
             Categorias
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <?php while($data = $prp->fetch(PDO::FETCH_ASSOC)){ ?>
+            <li><a class="dropdown-item"
+            href="listarprodutos.php?op=cate<?php echo $data['catid'];?>">
+              <?php echo $data ['catnome']; ?>
+           </a></li>
+            <?php } ?>
+
+            </ul>
+
         </li>
             <li class="nav-item">
               <a class="nav-link" href="subcategorias.html">Subcategorias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
         </div>
