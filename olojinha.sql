@@ -82,7 +82,10 @@ select
     subnome,
     subcatid,
     catnome,
+    fotcaminho,
     proativo
+   
+
 from
     produtos,
     subcategorias,
@@ -91,3 +94,18 @@ where
     prosubid = subid
 and
     subcatid = catid
+and
+    fotproid =  proid
+and
+    forpricipal = 1
+
+insert into subcategorias (subnome) values
+('acessorios mais comprados'),
+('acessorios menos comprados');
+
+insert into subcategorias (subnome, catid) values
+('acessorios mais comprados', 1),
+('acessorios menos comprados', 1);
+
+insert into fotosproduto
+        (fotcaminho,fotproduto,fotdescricao)
