@@ -69,17 +69,6 @@ insert into categorias (catnome) values
 ('Saúde'),
 ('Serviços'),
 ('Mais Categorias');
-insert into subcategorias (subnome) values
-('acessorios mais comprados'),
-('acessorios menos comprados');
-
-insert into subcategorias (subnome, catid) values
-('acessorios mais comprados', 1),
-('acessorios menos comprados', 1);
-
-insert into fotosproduto
-        (fotcaminho,fotproduto,fotdescricao)
-=======
 insert into subcategorias
 	(subnome,subcatid)
 values 
